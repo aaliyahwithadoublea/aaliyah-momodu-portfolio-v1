@@ -7,7 +7,7 @@ export interface Project {
   image: string;
 }
 
-export const allProjects: Project[] = [
+const projectsList: Project[] = [
   {
     title: "Aaliyah Momodu Portfolio",
     description:
@@ -117,3 +117,8 @@ export const allProjects: Project[] = [
     image: "/images/chatbot.png",
   },
 ];
+
+// Sort projects alphabetically by title
+export const allProjects: Project[] = projectsList.sort((a, b) => 
+  a.title.localeCompare(b.title)
+);

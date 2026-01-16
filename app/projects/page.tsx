@@ -120,7 +120,7 @@ export default function AllProjects() {
 
                       {/* Tech Stack Tags */}
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tech.slice(0, 4).map((tech) => (
+                        {project.tech.map((tech) => (
                           <motion.span
                             key={tech}
                             whileHover={{ scale: 1.05 }}
@@ -129,14 +129,6 @@ export default function AllProjects() {
                             {tech}
                           </motion.span>
                         ))}
-                        {project.tech.length > 4 && (
-                          <motion.span
-                            whileHover={{ scale: 1.05 }}
-                            className="px-2.5 py-1 bg-pastel-lavender-100 dark:bg-pastel-lavender-900/30 text-pastel-lavender-700 dark:text-pastel-lavender-300 rounded-md text-xs font-medium"
-                          >
-                            +{project.tech.length - 4}
-                          </motion.span>
-                        )}
                       </div>
 
                       {/* Links */}
