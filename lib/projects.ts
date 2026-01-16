@@ -42,7 +42,7 @@ export const allProjects: Project[] = [
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF.js", "pdf-lib", "react-signature-canvas", "react-dropzone"],
     github: "https://github.com/aaliyahwithadoublea/my-frontend-test",
     demo: "https://my-frontend-test-phi.vercel.app/",
-    image: "/api/placeholder/600/400",
+    image: "/images/anotting.png",
   },
   {
     title: "Grundpay",

@@ -8,7 +8,9 @@ import { Github, ExternalLink } from "lucide-react";
 import AnimatedCard from "@/components/ui/AnimatedCard";
 import { allProjects } from "@/lib/projects";
 
-const projects = allProjects;
+// Featured projects for the main page: Grundpay, Color Game, HESED EduSuite, PDF Annotation Tool
+const featuredProjectTitles = ["Grundpay", "Color Master Game", "HESED EduSuite", "PDF Annotation Tool"];
+const featuredProjects = allProjects.filter(project => featuredProjectTitles.includes(project.title));
 
 export default function Projects() {
   const ref = useRef(null);
@@ -39,7 +41,7 @@ export default function Projects() {
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.slice(0, 4).map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <AnimatedCard key={project.title}>
                 <motion.div
                   variants={fadeInUp}
