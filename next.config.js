@@ -16,8 +16,6 @@ const nextConfig = {
   // Turbopack configuration for faster compilation and better HMR
   // Turbopack has better hot module replacement than webpack
   turbopack: {},
-  // Optimize compilation
-  swcMinify: true,
   // Reduce initial bundle size
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
