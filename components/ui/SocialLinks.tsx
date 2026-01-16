@@ -9,7 +9,11 @@ interface SocialLinksProps {
   className?: string;
 }
 
-const socialLinks = [
+const socialLinks: Array<{
+  name: string;
+  url: string;
+  icon: typeof Github | typeof Linkedin | typeof Mail | typeof ExternalLink | null;
+}> = [
   {
     name: "GitHub",
     url: "https://github.com/aaliyahwithadoublea",
@@ -23,7 +27,7 @@ const socialLinks = [
   {
     name: "Medium",
     url: "https://medium.com/@momoduaaliyah1",
-    icon: ExternalLink,
+    icon: null, // Using custom "M" instead
   },
   {
     name: "Email",
@@ -76,34 +80,36 @@ export default function SocialLinks({
             } relative z-30 shadow-md shadow-pastel-pink-200/50 dark:shadow-pastel-pink-900/50`}
             style={{ willChange: "transform" }}
           >
-            <IconComponent 
-              className={`${iconSizeClasses[size]} ${
-                social.name === "GitHub"
-                  ? "text-pastel-pink-600 dark:text-pastel-pink-400"
-                  : social.name === "LinkedIn"
-                  ? "text-pastel-lavender-600 dark:text-pastel-lavender-400"
-                  : social.name === "Medium"
-                  ? "text-rose-600 dark:text-rose-400"
-                  : "text-pastel-peach-600 dark:text-pastel-peach-400"
-              } transition-colors duration-300 ${
-                social.name === "GitHub" 
-                  ? "group-hover:text-pastel-pink-700 dark:group-hover:text-pastel-pink-300"
-                  : social.name === "LinkedIn"
-                  ? "group-hover:text-pastel-lavender-700 dark:group-hover:text-pastel-lavender-300"
-                  : social.name === "Medium"
-                  ? "group-hover:text-rose-700 dark:group-hover:text-rose-300"
-                  : "group-hover:text-pastel-peach-700 dark:group-hover:text-pastel-peach-300"
-              }`}
-              style={{ 
-                display: "block", 
-                width: "100%", 
-                height: "100%",
-                minWidth: "24px",
-                minHeight: "24px"
-              }}
-              strokeWidth={2.5}
-              fill="none"
-            />
+            {social.name === "Medium" ? (
+              <span className={`${iconSizeClasses[size]} text-rose-600 dark:text-rose-400 font-bold font-elegant group-hover:text-rose-700 dark:group-hover:text-rose-300 transition-colors duration-300`}>
+                M
+              </span>
+            ) : IconComponent ? (
+              <IconComponent 
+                className={`${iconSizeClasses[size]} ${
+                  social.name === "GitHub"
+                    ? "text-pastel-pink-600 dark:text-pastel-pink-400"
+                    : social.name === "LinkedIn"
+                    ? "text-pastel-lavender-600 dark:text-pastel-lavender-400"
+                    : "text-pastel-peach-600 dark:text-pastel-peach-400"
+                } transition-colors duration-300 ${
+                  social.name === "GitHub" 
+                    ? "group-hover:text-pastel-pink-700 dark:group-hover:text-pastel-pink-300"
+                    : social.name === "LinkedIn"
+                    ? "group-hover:text-pastel-lavender-700 dark:group-hover:text-pastel-lavender-300"
+                    : "group-hover:text-pastel-peach-700 dark:group-hover:text-pastel-peach-300"
+                }`}
+                style={{ 
+                  display: "block", 
+                  width: "100%", 
+                  height: "100%",
+                  minWidth: "24px",
+                  minHeight: "24px"
+                }}
+                strokeWidth={2.5}
+                fill="none"
+              />
+            ) : null}
             {showLabels && (
               <span className="ml-2 text-sm font-medium">{social.name}</span>
             )}

@@ -6,45 +6,9 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import AnimatedCard from "@/components/ui/AnimatedCard";
+import { allProjects } from "@/lib/projects";
 
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A modern, full-featured e-commerce platform built with Next.js, featuring product catalog, shopping cart, and checkout flow. Optimized for performance and accessibility.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Zod"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    image: "/api/placeholder/600/400",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Built with React and modern state management.",
-    tech: ["React", "TypeScript", "Zustand", "Framer Motion", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    image: "/api/placeholder/600/400",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A beautiful, responsive portfolio website showcasing projects and skills. Features smooth animations, glassmorphism design, and full accessibility compliance.",
-    tech: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    image: "/api/placeholder/600/400",
-  },
-  {
-    title: "Weather Dashboard",
-    description:
-      "An elegant weather dashboard with location-based forecasts, interactive maps, and beautiful data visualizations. Includes dark mode and responsive design.",
-    tech: ["React", "TypeScript", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://demo.com",
-    image: "/api/placeholder/600/400",
-  },
-];
+const projects = allProjects;
 
 export default function Projects() {
   const ref = useRef(null);
@@ -75,18 +39,32 @@ export default function Projects() {
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
+            {projects.slice(0, 4).map((project, index) => (
               <AnimatedCard key={project.title}>
                 <motion.div
                   variants={fadeInUp}
                   whileHover={cardHover}
                   className="glass-card overflow-hidden hover-glow group h-full"
                 >
-                {/* Project Image Placeholder */}
-                <div className="w-full h-48 bg-gradient-to-br from-pastel-pink-200 via-pastel-lavender-200 to-pastel-peach-200 rounded-lg mb-4 flex items-center justify-center">
-                  <span className="text-foreground/50 text-sm font-medium">
-                    {project.title}
-                  </span>
+                {/* Project Image */}
+                <div className="w-full h-48 rounded-lg mb-4 overflow-hidden bg-gradient-to-br from-pastel-pink-200 via-pastel-lavender-200 to-pastel-peach-200 relative">
+                  {project.image && project.image !== "/api/placeholder/600/400" ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  ) : null}
+                  {(!project.image || project.image === "/api/placeholder/600/400") && (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-foreground/50 text-sm font-medium">
+                        {project.title}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <h3 className="text-2xl font-semibold mb-3 text-pastel-pink-600 dark:text-pastel-pink-400">
@@ -111,18 +89,20 @@ export default function Projects() {
 
                 {/* Links */}
                 <div className="flex items-center gap-4">
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} on GitHub`}
-                    whileHover={{ scale: 1.1, x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 text-foreground/70 hover:text-pastel-pink-500 transition-colors duration-300"
-                  >
-                    <Github className="w-5 h-5" />
-                    <span className="text-sm font-medium">Code</span>
-                  </motion.a>
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} on GitHub`}
+                      whileHover={{ scale: 1.1, x: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 text-foreground/70 hover:text-pastel-pink-500 transition-colors duration-300"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span className="text-sm font-medium">Code</span>
+                    </motion.a>
+                  )}
                   <motion.a
                     href={project.demo}
                     target="_blank"
@@ -140,6 +120,22 @@ export default function Projects() {
               </AnimatedCard>
             ))}
           </div>
+
+          {/* View All Button */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex justify-center mt-12"
+          >
+            <motion.a
+              href="/projects"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 bg-gradient-to-r from-pastel-pink-500 to-pastel-lavender-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-pastel-pink-500/50 transition-all duration-300 flex items-center gap-2"
+            >
+              <span>View All Projects</span>
+              <ExternalLink className="w-4 h-4" />
+            </motion.a>
+          </motion.div>
         </motion.div>
       </motion.div>
     </section>

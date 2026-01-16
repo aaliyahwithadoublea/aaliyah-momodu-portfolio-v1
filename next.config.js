@@ -13,13 +13,9 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
-  // Turbopack configuration for faster compilation
-  turbopack: {
-    // Optimize for faster dev server startup
-    resolveAlias: {
-      // Reduce module resolution time
-    },
-  },
+  // Turbopack configuration for faster compilation and better HMR
+  // Turbopack has better hot module replacement than webpack
+  turbopack: {},
   // Optimize compilation
   swcMinify: true,
   // Reduce initial bundle size

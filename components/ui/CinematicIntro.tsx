@@ -70,29 +70,12 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
   const [showIntro, setShowIntro] = useState(true);
   const [skipRequested, setSkipRequested] = useState(false);
   const [princessExit, setPrincessExit] = useState(false);
+  const [typewriterComplete, setTypewriterComplete] = useState(false);
 
   // Check for reduced motion
   const prefersReducedMotion =
     typeof window !== "undefined" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Auto-complete after 3.5 seconds (if not skipped)
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setShowIntro(false);
-      onComplete();
-      return;
-    }
-
-    const timer = setTimeout(() => {
-      if (!skipRequested) {
-        handleComplete();
-      }
-    }, 3500);
-
-    return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [skipRequested, prefersReducedMotion]);
 
   const handleComplete = () => {
     setPrincessExit(true);
@@ -106,16 +89,38 @@ export default function CinematicIntro({ onComplete }: CinematicIntroProps) {
     }, 600);
   };
 
+  // Wait for typewriter to finish before auto-completing
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setShowIntro(false);
+      onComplete();
+      return;
+    }
+
+    if (typewriterComplete && !skipRequested) {
+      // Wait a bit after typewriter finishes, then complete
+      const timer = setTimeout(() => {
+        handleComplete();
+      }, 1000); // 1 second after typing finishes
+
+      return () => clearTimeout(timer);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [typewriterComplete, skipRequested, prefersReducedMotion]);
+
   const handleSkip = () => {
     setSkipRequested(true);
     handleComplete();
   };
 
-  // Typewriter for welcome text
+  // Typewriter for welcome text - with onComplete callback
   const welcomeText = useTypewriter({
     text: "Welcome to Aaliyah's World",
     speed: 80,
     delay: 0.8,
+    onComplete: () => {
+      setTypewriterComplete(true);
+    },
   });
 
   if (prefersReducedMotion) {
