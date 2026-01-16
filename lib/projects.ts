@@ -36,6 +36,15 @@ export const allProjects: Project[] = [
     image: "/images/color-game.png",
   },
   {
+    title: "PDF Annotation Tool",
+    description:
+      "A modern, feature-rich PDF annotation web application built with Next.js and React. Upload PDF documents with drag-and-drop, annotate with customizable highlights and underlines, draw and place signatures, and export annotated PDFs with all changes embedded. Features real-time preview, color picker, resizable signatures, and toast notifications.",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PDF.js", "pdf-lib", "react-signature-canvas", "react-dropzone"],
+    github: "https://github.com/aaliyahwithadoublea/my-frontend-test",
+    demo: "https://my-frontend-test-phi.vercel.app/",
+    image: "/api/placeholder/600/400",
+  },
+  {
     title: "Grundpay",
     description:
       "A fintech platform designed to simplify installment payments for real estate purchases. Enables buyers to manage structured payment plans, while developers and brokers can track transactions efficiently. Features secure transactions, automated payment tracking, robust wallet system, referral earnings, and intuitive property exploration. Built as a Progressive Web App (PWA).",
