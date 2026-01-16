@@ -9,6 +9,15 @@ export interface Project {
 
 export const allProjects: Project[] = [
   {
+    title: "Aaliyah Momodu Portfolio",
+    description:
+      "A beautiful, responsive portfolio website showcasing my work as a frontend developer. Features smooth animations, glassmorphism design, dark mode, and full accessibility compliance. Built with Next.js, TypeScript, Framer Motion, and Tailwind CSS. Includes cinematic intro, flying princess mascot, and comprehensive project showcase.",
+    tech: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "React", "GitHub"],
+    github: "https://github.com/aaliyahwithadoublea/aaliyah-momodu-portfolio-v1",
+    demo: "https://aaliyahwithadoublea-portfolio-v1.vercel.app/",
+    image: "/images/my-portfolio.png",
+  },
+  {
     title: "Conference Ticket Generator",
     description:
       "A dynamic conference ticket generator application built for HNGX Stage 2. Features ticket customization, QR code generation, and beautiful ticket designs. Built with React and Vite for optimal performance.",
