@@ -8,6 +8,20 @@ import { Calendar, MapPin, Briefcase } from "lucide-react";
 
 const experiences = [
   {
+    title: "Lead Frontend Developer",
+    company: "Grundpay",
+    location: "Lagos State, NG · Remote",
+    period: "APR 2025 - PRESENT",
+    description: [
+      "Leading frontend development for a fintech platform specializing in real estate installment payments, managing structured payment plans and transaction tracking",
+      "Architecting and implementing scalable React applications using Vite, TypeScript, and modern state management patterns",
+      "Building secure payment interfaces with seamless user experiences, integrating payment gateways and wallet systems",
+      "Mentoring and guiding frontend team members, establishing coding standards and best practices for React development",
+      "Optimizing application performance and implementing Progressive Web App (PWA) features for enhanced mobile experience",
+      "Collaborating with cross-functional teams to deliver high-quality fintech solutions with focus on security and user experience",
+    ],
+  },
+  {
     title: "Frontend Developer",
     company: "HESED Edusuite",
     location: "Lagos, NG",
