@@ -107,4 +107,13 @@ export const allProjects: Project[] = [
     demo: "#",
     image: "/api/placeholder/600/400",
   },
+  {
+    title: "Mental Health Chatbot",
+    description:
+      "A chatbot designed to provide support, information, and guidance related to mental health. Built with Flask and Python, featuring natural language processing capabilities. The chatbot offers empathetic responses, mental health resources, and support guidance to help users navigate their mental wellness journey.",
+    tech: ["Python", "Flask", "Machine Learning", "NLP", "HTML", "CSS", "TensorFlow", "Natural Language Processing"],
+    github: "https://github.com/aaliyahwithadoublea/Chatbot",
+    demo: null,
+    image: "/images/chatbot.png",
+  },
 ];
