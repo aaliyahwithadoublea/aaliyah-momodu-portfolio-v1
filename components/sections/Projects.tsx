@@ -105,18 +105,20 @@ export default function Projects() {
                       <span className="text-sm font-medium">Code</span>
                     </motion.a>
                   )}
-                  <motion.a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} live demo`}
-                    whileHover={{ scale: 1.1, x: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex items-center gap-2 text-foreground/70 hover:text-pastel-lavender-500 transition-colors duration-300"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                    <span className="text-sm font-medium">Live Demo</span>
-                  </motion.a>
+                  {project.demo && project.demo !== "#" && (
+                    <motion.a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} live demo`}
+                      whileHover={{ scale: 1.1, x: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex items-center gap-2 text-foreground/70 hover:text-pastel-lavender-500 transition-colors duration-300"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      <span className="text-sm font-medium">Live Demo</span>
+                    </motion.a>
+                  )}
                 </div>
                 </motion.div>
               </AnimatedCard>
