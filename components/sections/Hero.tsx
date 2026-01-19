@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeInUp, fadeIn, floatAnimation } from "@/lib/animations";
-import { MapPin, ArrowDown, Sparkles, Github, Linkedin, Mail } from "lucide-react";
+import { MapPin, ArrowDown, Sparkles, Github, Linkedin, Mail, Download } from "lucide-react";
 import Link from "next/link";
 import SocialLinks from "@/components/ui/SocialLinks";
 import FlyingPrincess from "@/components/ui/FlyingPrincess";
@@ -227,21 +227,31 @@ export default function Hero() {
           transition={{ delay: 0.6 }}
           className="flex flex-wrap items-center justify-center gap-4 mb-12"
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="#projects"
-              className="px-8 py-3 bg-gradient-to-r from-pastel-pink-500 to-pastel-lavender-500 text-white rounded-full font-semibold hover-glow transition-all duration-300 inline-block"
+              className="px-8 py-3.5 bg-gradient-to-r from-pastel-pink-500 to-pastel-lavender-500 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/50 transition-all duration-300 inline-block"
             >
               View Projects
             </Link>
           </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
             <Link
               href="#contact"
-              className="px-8 py-3 glass-card text-foreground font-semibold hover-glow transition-all duration-300 inline-block"
+              className="px-8 py-3.5 glass-card text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/30 dark:hover:shadow-pastel-pink-900/30 transition-all duration-300 inline-block rounded-full border border-pastel-pink-200/50 dark:border-pastel-pink-800/50 hover:border-pastel-pink-300 dark:hover:border-pastel-pink-700"
             >
               Contact Me
             </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+            <a
+              href="/cv.pdf"
+              download="Aaliyah_Momodu_CV.pdf"
+              className="px-8 py-3.5 glass-card text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/30 dark:hover:shadow-pastel-pink-900/30 transition-all duration-300 inline-flex items-center gap-2 rounded-full border border-pastel-pink-200/50 dark:border-pastel-pink-800/50 hover:border-pastel-pink-300 dark:hover:border-pastel-pink-700"
+            >
+              <Download className="w-5 h-5" />
+              Download CV
+            </a>
           </motion.div>
         </motion.div>
 

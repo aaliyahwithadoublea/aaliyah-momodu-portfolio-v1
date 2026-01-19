@@ -38,6 +38,11 @@ export const metadata: Metadata = {
   description: "Results-driven Frontend Developer with expertise in React.js, Next.js, and React Native. Based in Lagos, Nigeria.",
   keywords: ["frontend developer", "react", "next.js", "portfolio", "lagos", "nigeria"],
   authors: [{ name: "Aaliyah Momodu" }],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     title: "Aaliyah Momodu | Frontend Developer",
     description: "Results-driven Frontend Developer based in Lagos, Nigeria",
@@ -52,6 +57,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`${nunito.variable} ${playfair.variable} ${dancingScript.variable} ${cormorant.variable} font-body`} suppressHydrationWarning>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

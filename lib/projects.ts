@@ -108,6 +108,15 @@ const projectsList: Project[] = [
     image: "/api/placeholder/600/400",
   },
   {
+    title: "Counter Mobile App",
+    description:
+      "A mobile application built with React Native for counting and tracking various metrics. Features an intuitive interface, smooth animations, and responsive design. The app is available as a web version for easy access and testing.",
+    tech: ["React Native", "JavaScript", "Mobile Development", "React", "Web App"],
+    github: "https://github.com/aaliyahwithadoublea/Counter-Mobile-App",
+    demo: "https://counter-mobile-jvp8xdnql-aaliyahwithadoubleas-projects.vercel.app/",
+    image: "/api/placeholder/600/400",
+  },
+  {
     title: "Mental Health Chatbot",
     description:
       "A chatbot designed to provide support, information, and guidance related to mental health. Built with Flask and Python, featuring natural language processing capabilities. The chatbot offers empathetic responses, mental health resources, and support guidance to help users navigate their mental wellness journey.",
@@ -115,6 +124,33 @@ const projectsList: Project[] = [
     github: "https://github.com/aaliyahwithadoublea/Chatbot",
     demo: null, // No live demo available
     image: "/images/chatbot.png",
+  },
+  {
+    title: "Restaurant Seat Reservations",
+    description:
+      "A functional UI for booking and reservation of seats in a restaurant. Built with React and Vite, featuring an intuitive interface for customers to select and reserve restaurant seats. Includes real-time seat availability, booking management, and a clean, responsive design optimized for restaurant operations.",
+    tech: ["React", "Vite", "JavaScript", "CSS3", "HTML5", "Netlify", "Restaurant Booking"],
+    github: "https://github.com/Alori-Daniel/RestaurantSeatReservations",
+    demo: "https://crisp-crave.netlify.app/",
+    image: "/images/crispy.png",
+  },
+  {
+    title: "CognoRise InfoTech",
+    description:
+      "A collection of three interactive web applications: a Calculator for performing mathematical operations, a Countdown Timer for tracking time-based events, and a TO-DO List for task management. Each application features a clean, user-friendly interface built with vanilla JavaScript, HTML, and CSS. Perfect for demonstrating core JavaScript skills and DOM manipulation.",
+    tech: ["JavaScript", "HTML5", "CSS3", "Vanilla JS", "DOM Manipulation"],
+    github: "https://github.com/aaliyahwithadoublea/CognoRise-InfoTech",
+    demo: "https://cognorise-infotech-chi.vercel.app/",
+    image: "/images/cognorise.png",
+  },
+  {
+    title: "Trakmama",
+    description:
+      "A mobile platform for expectant mothers and new parents to track maternal and child health indicators, receive personalized guidance, and schedule appointments. Helps conceiving mothers stay healthy from start to childbirth with daily reminders, healthy tips, and motivations. Connects pregnant women to share experiences and provides education about healthy pregnancy, preeclampsia, diabetes, postpartum care, and hypertension.",
+    tech: ["JavaScript", "React", "HTML5", "CSS3", "Tailwind CSS", "Mobile App", "Health Tracking", "Vercel"],
+    github: "https://github.com/Adaobilynda1234/Trakmama-project",
+    demo: "https://trakmama-project.vercel.app/",
+    image: "/images/trakmama.png",
   },
 ];
 

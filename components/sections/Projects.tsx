@@ -8,8 +8,8 @@ import { Github, ExternalLink } from "lucide-react";
 import AnimatedCard from "@/components/ui/AnimatedCard";
 import { allProjects } from "@/lib/projects";
 
-// Featured projects for the main page: Grundpay, Color Game, HESED EduSuite, PDF Annotation Tool
-const featuredProjectTitles = ["Grundpay", "Color Master Game", "HESED EduSuite", "PDF Annotation Tool"];
+// Featured projects for the main page: Grundpay, Restaurant Seat Reservations, HESED EduSuite, PDF Annotation Tool
+const featuredProjectTitles = ["Grundpay", "Restaurant Seat Reservations", "HESED EduSuite", "PDF Annotation Tool"];
 const featuredProjects = allProjects.filter(project => featuredProjectTitles.includes(project.title));
 
 export default function Projects() {
