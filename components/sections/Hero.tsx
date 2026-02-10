@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { fadeInUp, fadeIn, floatAnimation } from "@/lib/animations";
-import { MapPin, ArrowDown, Sparkles, Github, Linkedin, Mail, Download } from "lucide-react";
+import { MapPin, ArrowDown, Sparkles, Github, Linkedin, Mail, Download, Eye } from "lucide-react";
 import Link from "next/link";
 import SocialLinks from "@/components/ui/SocialLinks";
 import FlyingPrincess from "@/components/ui/FlyingPrincess";
@@ -10,10 +10,12 @@ import TypewriterText from "@/components/ui/TypewriterText";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
 import AvailableBadge from "@/components/ui/AvailableBadge";
+import PDFViewer from "@/components/ui/PDFViewer";
 
 export default function Hero() {
   const [showContent, setShowContent] = useState(false);
   const [startTyping, setStartTyping] = useState(false);
+  const [isPDFViewerOpen, setIsPDFViewerOpen] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, margin: "-100px" });
 
@@ -244,8 +246,17 @@ export default function Hero() {
             </Link>
           </motion.div>
           <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+            <button
+              onClick={() => setIsPDFViewerOpen(true)}
+              className="px-8 py-3.5 glass-card text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/30 dark:hover:shadow-pastel-pink-900/30 transition-all duration-300 inline-flex items-center gap-2 rounded-full border border-pastel-pink-200/50 dark:border-pastel-pink-800/50 hover:border-pastel-pink-300 dark:hover:border-pastel-pink-700"
+            >
+              <Eye className="w-5 h-5" />
+              View CV
+            </button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
             <a
-              href="/cv.pdf"
+              href="/CV/AALIYAH MOMODU CV.pdf"
               download="Aaliyah_Momodu_CV.pdf"
               className="px-8 py-3.5 glass-card text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/30 dark:hover:shadow-pastel-pink-900/30 transition-all duration-300 inline-flex items-center gap-2 rounded-full border border-pastel-pink-200/50 dark:border-pastel-pink-800/50 hover:border-pastel-pink-300 dark:hover:border-pastel-pink-700"
             >
@@ -254,6 +265,14 @@ export default function Hero() {
             </a>
           </motion.div>
         </motion.div>
+
+        {/* PDF Viewer Modal */}
+        <PDFViewer
+          isOpen={isPDFViewerOpen}
+          onClose={() => setIsPDFViewerOpen(false)}
+          pdfUrl="/CV/AALIYAH MOMODU CV.pdf"
+          fileName="Aaliyah_Momodu_CV.pdf"
+        />
 
         {/* Social Links */}
         <motion.div

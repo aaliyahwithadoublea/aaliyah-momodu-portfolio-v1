@@ -25,7 +25,35 @@ export default function AllProjects() {
       <ThemeToggle />
       
       <div className="relative z-10 min-h-screen pt-20 px-4 py-20">
-        <div className="max-w-7xl mx-auto">
+        {/* Decorative Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div
+            className="absolute top-20 left-10 w-72 h-72 bg-pastel-pink-300/10 dark:bg-pastel-pink-600/5 rounded-full blur-3xl"
+            animate={{
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div
+            className="absolute bottom-20 right-10 w-96 h-96 bg-pastel-lavender-300/10 dark:bg-pastel-lavender-600/5 rounded-full blur-3xl"
+            animate={{
+              x: [0, -50, 0],
+              y: [0, -30, 0],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -33,32 +61,82 @@ export default function AllProjects() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="mb-12"
           >
+            {/* Decorative Back Button */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-8 flex justify-start"
             >
-              <Link
-                href="/#projects"
-                className="inline-flex items-center gap-2 text-foreground/70 hover:text-pastel-pink-500 transition-colors duration-300 mb-6 group"
+              <motion.div
+                whileHover={{ scale: 1.05, x: -5 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                <span>Back to Home</span>
-              </Link>
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-background/80 dark:bg-background/90 backdrop-blur-md text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/50 dark:hover:shadow-pastel-pink-900/50 transition-all duration-300 rounded-full border-2 border-pastel-pink-300/60 dark:border-pastel-pink-600/60 hover:border-pastel-pink-400 dark:hover:border-pastel-pink-500 hover:bg-gradient-to-r hover:from-pastel-pink-500/20 hover:to-pastel-lavender-500/20 group shadow-md"
+                >
+                  <motion.div
+                    animate={{ x: [0, -3, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                  >
+                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform text-pastel-pink-500 dark:text-pastel-pink-400" />
+                  </motion.div>
+                  <span className="group-hover:text-pastel-pink-600 dark:group-hover:text-pastel-pink-400 transition-colors font-medium">Back to Home</span>
+                </Link>
+              </motion.div>
             </motion.div>
-            <motion.h1
+
+            {/* Title Section with Decorative Elements */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-4xl md:text-6xl font-bold mb-4 gradient-text font-elegant"
+              className="relative"
             >
-              All Projects
-            </motion.h1>
+              {/* Decorative Sparkles */}
+              <div className="absolute -top-4 -left-4 opacity-20">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="text-pastel-pink-400 text-4xl"
+                >
+                  ✨
+                </motion.div>
+              </div>
+              <div className="absolute -top-2 -right-8 opacity-20">
+                <motion.div
+                  animate={{ rotate: [360, 0] }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="text-pastel-lavender-400 text-3xl"
+                >
+                  ✨
+                </motion.div>
+              </div>
+
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-4xl md:text-6xl font-bold mb-4 gradient-text font-elegant relative z-10"
+              >
+                All Projects
+              </motion.h1>
+              
+              {/* Decorative Underline */}
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: "100%" }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeInOut" }}
+                className="h-1 bg-gradient-to-r from-pastel-pink-400 via-pastel-lavender-400 to-pastel-peach-400 rounded-full mb-6"
+              />
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-foreground/70 text-lg md:text-xl"
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="text-foreground/70 text-lg md:text-xl max-w-2xl"
             >
               A comprehensive collection of my work, showcasing various technologies and solutions.
             </motion.p>

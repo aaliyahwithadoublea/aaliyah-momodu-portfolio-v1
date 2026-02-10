@@ -7,8 +7,9 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Send, Mail, MapPin, Phone } from "lucide-react";
+import { Send, Mail, MapPin, Phone, Download, Eye } from "lucide-react";
 import SocialLinks from "@/components/ui/SocialLinks";
+import PDFViewer from "@/components/ui/PDFViewer";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -23,6 +24,7 @@ export default function Contact() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [isPDFViewerOpen, setIsPDFViewerOpen] = useState(false);
 
   const {
     register,
@@ -90,11 +92,11 @@ export default function Contact() {
                     <span>momoduaaliyah1@gmail.com</span>
                   </a>
                   <a
-                    href="tel:07053674782"
+                    href="tel:+33765141852"
                     className="flex items-center gap-3 text-foreground/80 hover:text-pastel-pink-500 transition-colors duration-300"
                   >
                     <Phone className="w-5 h-5" />
-                    <span>07053674782</span>
+                    <span>+33 7651 418 52</span>
                   </a>
                   <div className="flex items-center gap-3 text-foreground/80">
                     <MapPin className="w-5 h-5" />
@@ -104,6 +106,37 @@ export default function Contact() {
 
                 <div className="mt-6">
                   <SocialLinks size="md" />
+                </div>
+
+                {/* CV Buttons */}
+                <div className="mt-6 flex flex-col sm:flex-row gap-3">
+                  <motion.div 
+                    className="flex-1"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <button
+                      onClick={() => setIsPDFViewerOpen(true)}
+                      className="w-full px-6 py-3 glass-card text-foreground font-semibold hover:shadow-lg hover:shadow-pastel-pink-500/30 dark:hover:shadow-pastel-pink-900/30 transition-all duration-300 flex items-center justify-center gap-2 rounded-lg border border-pastel-pink-200/50 dark:border-pastel-pink-800/50 hover:border-pastel-pink-300 dark:hover:border-pastel-pink-700"
+                    >
+                      <Eye className="w-5 h-5" />
+                      <span>View CV</span>
+                    </button>
+                  </motion.div>
+                  <motion.div 
+                    className="flex-1"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <a
+                      href="/CV/AALIYAH MOMODU CV.pdf"
+                      download="Aaliyah_Momodu_CV.pdf"
+                      className="w-full px-6 py-3 bg-gradient-to-r from-pastel-pink-500 to-pastel-lavender-500 text-white rounded-lg font-semibold hover-glow transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>Download CV</span>
+                    </a>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -232,6 +265,14 @@ export default function Contact() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* PDF Viewer Modal */}
+      <PDFViewer
+        isOpen={isPDFViewerOpen}
+        onClose={() => setIsPDFViewerOpen(false)}
+        pdfUrl="/CV/AALIYAH MOMODU CV.pdf"
+        fileName="Aaliyah_Momodu_CV.pdf"
+      />
     </section>
   );
 }

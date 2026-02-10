@@ -10,15 +10,15 @@ const education = [
   {
     institution: "EPITA - École Pour l'Informatique et les Techniques Avancées",
     location: "Paris, France 🇫🇷",
-    degree: "Masters in Cybersecurity",
-    period: "2026 - 2027",
+    degree: "Msc in Computer Security",
+    period: "FEB 2026 - SEP 2027",
     status: "Upcoming",
   },
   {
-    institution: "Crescent University Abeokuta",
-    location: "Ogun, NG",
-    degree: "Bsc. in Computer Science",
-    grade: "First Class",
+    institution: "Crescent University Abeokuta (CUAB)",
+    location: "Ogun State, Nigeria",
+    degree: "BSc in Computer Science",
+    grade: "4.53/5.00 CGPA (First Class Hons)",
     period: "NOV 2020 - AUG 2023",
     thesis: {
       topic: "A web based conversational Agent for Mental Health Support",
@@ -27,9 +27,10 @@ const education = [
   },
   {
     institution: "University of Lagos",
-    location: "Lagos, NG",
-    degree: "A Levels : Computer Science",
-    period: "SEPT 2019 - AUG 2020",
+    location: "Lagos State, Nigeria",
+    degree: "Diploma (A Levels) in Computer Science",
+    grade: "Distinction",
+    period: "SEP 2019 - AUG 2020",
   },
 ];
 
