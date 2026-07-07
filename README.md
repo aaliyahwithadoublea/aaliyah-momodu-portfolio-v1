@@ -1,6 +1,6 @@
 # Aaliyah Momodu - Frontend Developer Portfolio ✨
 
-> A **MAXIMAL, expressive, magical, and unforgettable** portfolio that makes recruiters impressed BEFORE clicking any project. A cinematic tech princess universe that showcases frontend engineering excellence.
+> A personal portfolio that showcases my frontend engineering experiences/projects.
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue)](https://www.typescriptlang.org/)
@@ -9,43 +9,10 @@
 
 ## ✨ Overview
 
-This portfolio represents a **mid-level frontend developer** with a unique brand identity: **"Bold • Feminine • Magical • Cinematic • Tech-Forward • Unforgettable"**. It combines:
+This portfolio represents a my projects throughout my years . It combines:
 
-- **MAXIMAL, expressive design** - NOT minimal, layered visuals with floating elements
-- **Flying Princess Mascot** - A core brand element that flies across sections
-- **Cinematic intro sequence** - Magical welcome experience
-- **Country flag integration** - Dynamic flags for France 🇫🇷 and Nigeria 🇳🇬
-- **Professional technical depth** demonstrating engineering maturity
-- **Thoughtful, magical animations** that create unforgettable experiences
-- **Accessibility-first** approach with WCAG 2.1 compliance
-- **Performance-conscious** implementation with Lighthouse scores in mind
 
-## 🎨 Design Philosophy
-
-### Brand Tone
-- **Confident** • **Feminine** • **Elegant** • **Modern** • **Technically Serious**
-
-### Visual Identity
-- Soft pastel palette (pink, lavender, nude, soft peach)
-- Glassmorphism & subtle glow effects
-- Smooth gradients and clean typography
-- "Princess energy" meets serious engineering
-
-### Animation Principles
-All animations are **purposeful**:
-- ✅ Micro-interactions (button feedback, hover states)
-- ✅ Loading & progress indicators
-- ✅ Smooth page transitions
-- ✅ Gentle hover lift & glow
-- ✅ Parallax depth for backgrounds
-- ✅ Floating decorative elements (used sparingly)
-
-**Avoided:**
-- ❌ Overlapping chaotic motion
-- ❌ Long unskippable animations
-- ❌ Performance-heavy effects everywhere
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Technologies
 - **Next.js 14** (App Router) - React framework with SSR/SSG
